@@ -1,3 +1,5 @@
+require 'pry'
+
 # Write your code below game_hash
 def game_hash
   {
@@ -61,7 +63,7 @@ def game_hash
           slam_dunks: 1
         }
       ]
-    },
+      },
     away: {
       team_name: "Charlotte Hornets",
       colors: ["Turquoise", "Purple"],
@@ -127,3 +129,53 @@ def game_hash
 end
 
 # Write code here
+def num_points_scored(player)
+  total_points = 0
+  game_hash.each do |home_away, team_info|
+    team_info[:players].each do |stats|
+      if stats[:player_name] == player
+        total_points = stats[:points]
+      end
+    end
+  end
+  total_points
+end
+
+def shoe_size (player)
+  shoe = 0
+  game_hash.each do |home_away,team_info|
+    team_info[:players].each do |stats|
+      if stats[:player_name] == player
+        shoe = stats[:shoe]
+      end
+    end
+  end
+  shoe
+end
+
+def team_colors (team)
+  game_hash.each do |key,value|
+    value.each do|inner_key, inner_value|
+      if inner_value == team
+        return game_hash[key][:colors]
+      end
+    end
+  end
+end
+
+def team_names (teams)
+  teams_array = []
+  game_hash.each do |key,value|
+    if key = name
+      if inner_key == teams
+        return game_hash[key][:team_name]
+      end
+    end
+  end
+end
+
+
+
+
+
+
