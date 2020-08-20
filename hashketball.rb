@@ -185,6 +185,17 @@ def player_numbers(teamname)
   team_numbers
 end
 
+def player_stats(name)
+  stats_info = {}
+  game_hash.each do |key, value|
+    if value[:player_name] == name
+      stats_info << name[:number][:shoe][:points][:rebounds][:assists][:steals][:blocks][:slam_dunks]
+    end
+  end
+  stats_info
+end
+  
+  
 
 
 
