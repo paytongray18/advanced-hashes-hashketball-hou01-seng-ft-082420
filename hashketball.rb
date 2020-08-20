@@ -175,7 +175,7 @@ def team_names (teams)
 end
 
 def team_names
-  game_hash.collect do |home, away|
+  game_hash.collect do |home, team|
     team[:team_name]
   end
 end
