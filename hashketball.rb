@@ -176,7 +176,7 @@ def player_numbers(teamname)
       value.each do |players,numbers|
         if players == :players
           numbers.each do |numbers|
-            team_numbers << numbers[:numbers]
+            team_numbers << numbers[:number]
           end
         end
       end
