@@ -189,7 +189,7 @@ def player_stats(name)
   stats_info = {}
   game_hash.each do |key, value|
     if value[:player_name] == name
-      stats_info << name[:number][:shoe][:points][:rebounds][:assists][:steals][:blocks][:slam_dunks]
+      stats_info << name
       stats_info
     end
   end
