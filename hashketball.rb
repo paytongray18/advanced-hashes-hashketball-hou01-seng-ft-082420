@@ -163,22 +163,13 @@ def team_colors (team)
   end
 end
 
-def team_names (teams)
-  teams_array = []
-  game_hash.each do |key,value|
-    if key = name
-      if inner_key == teams
-        return game_hash[key][:team_name]
-      end
-    end
-  end
-end
-
 def team_names
   game_hash.collect do |home, team|
     team[:team_name]
   end
 end
+
+
 
 
 
