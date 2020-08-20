@@ -174,6 +174,11 @@ def team_names (teams)
   end
 end
 
+def team_names
+  game_hash.collect do |home, away|
+    team[:team_name]
+  end
+end
 
 
 
