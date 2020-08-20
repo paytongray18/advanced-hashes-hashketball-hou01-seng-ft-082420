@@ -169,15 +169,20 @@ def team_names
   end
 end
 
-def player_numbers
+def player_numbers(teamname)
   team_numbers = []
   game_hash.each do |key,value|
-    value.each do|inner_key, inner_value|
-      if inner_value == team_numbers
-        return game_hash[key][:number]
+    if value[:team_name] == teamname
+      value.each do |players,numbers|
+        if players == :players
+          numbers.each do |numbers|
+            team_numbers << numbers[:numbers]
+          end
+        end
       end
     end
   end
+  team_numbers
 end
 
 
